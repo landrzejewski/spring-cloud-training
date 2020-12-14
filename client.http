@@ -8,6 +8,6 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8000/payments/18c6d029-7b42-4bbb-8853-2db7b9ff09b1
+GET http://localhost:8000/payments/18c6d029-7b42-4bbb-8853-2db7b9ff09b2
 Accept: application/json
 Content-Type: application/json

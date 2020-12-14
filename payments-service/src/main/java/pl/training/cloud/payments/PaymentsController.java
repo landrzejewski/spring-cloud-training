@@ -2,6 +2,7 @@ package pl.training.cloud.payments;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
 import static pl.training.cloud.payments.UriBuilder.requestUriWithId;
@@ -27,5 +28,10 @@ public class PaymentsController implements PaymentsApi {
         var payment = paymentsService.getPayment(id);
         return ResponseEntity.ok(paymentsMapper.toPaymentTransferObject(payment));
     }
+
+    /*@ExceptionHandler(PaymentNotFoundException.class)
+    public ResponseEntity<Void> onPaymentNotFound(PaymentNotFoundException exception) {
+        return ResponseEntity.notFound().build();
+    }*/
 
 }
