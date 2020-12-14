@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: payments-service
+  profiles:
+    active: development
