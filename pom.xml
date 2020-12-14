@@ -19,6 +19,7 @@
     <modules>
         <module>payments-api</module>
         <module>payments-service</module>
+        <module>configuration-server</module>
     </modules>
 
 </project>

@@ -39,7 +39,8 @@ public class GlobalExceptionHandler {
             description = exceptionName;
         }
         exception.printStackTrace();
-        return ResponseEntity.status(status).body(new ExceptionTransferObject(description, LocalDateTime.now()));
+        return ResponseEntity.status(status)
+                .body(new ExceptionTransferObject(description, LocalDateTime.now()));
     }
 
 }

@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: payments
+          predicates:
+            - Path=/api/payments/**
+          uri: lb://PAYMENTS-SERVICE
+          filters:
+            - RewritePath=/api(?<segment>.*), $\{segment}
