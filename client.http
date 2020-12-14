@@ -1,0 +1,13 @@
+POST http://localhost:8000/payments
+Accept: application/json
+Content-Type: application/json
+
+{
+  "value": "1000 PLN"
+}
+
+###
+
+GET http://localhost:8000/payments/f87764f2-35db-4df2-b491-c2e5daedd375
+Accept: application/json
+Content-Type: application/json
