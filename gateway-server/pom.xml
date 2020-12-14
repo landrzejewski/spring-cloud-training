@@ -12,11 +12,11 @@
     </parent>
 
     <groupId>pl.training.cloud</groupId>
-    <artifactId>configuration-server</artifactId>
+    <artifactId>gateway-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>configuration-server</name>
-    <description>configuration-server</description>
+    <name>gateway-server</name>
+    <description>gateway-server</description>
 
     <properties>
         <java.version>11</java.version>
@@ -47,7 +47,15 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 
