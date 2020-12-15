@@ -1,6 +1,7 @@
 package pl.training.cloud.payments;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Transactional
 @Service
+@Log
 @RequiredArgsConstructor
 public class FakePaymentService implements PaymentsService {
 
@@ -22,6 +24,7 @@ public class FakePaymentService implements PaymentsService {
                 .status(PaymentStatus.STARTED)
                 .timestamp(LocalDateTime.now())
                 .build();
+        log.info("New payment: " + payment);
         return paymentsRepository.saveAndFlush(payment);
     }
 

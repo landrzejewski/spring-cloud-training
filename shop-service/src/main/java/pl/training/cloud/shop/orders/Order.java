@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+@Table(name = "orders")
 @Entity
 @Data
 @RequiredArgsConstructor

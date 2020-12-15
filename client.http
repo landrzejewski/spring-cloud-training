@@ -27,3 +27,24 @@ Content-Type: application/json
 GET http://localhost:8080/api/payments/2a769d8a-22a5-4538-9850-f4b3a70fd3bb
 Accept: application/json
 Content-Type: application/json
+
+###
+
+POST http://localhost:8080/api/shop/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "clientId": 1,
+  "products": [
+    {
+       "id": 1
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/api/shop/orders/3
+Accept: application/json
+Content-Type: application/json
