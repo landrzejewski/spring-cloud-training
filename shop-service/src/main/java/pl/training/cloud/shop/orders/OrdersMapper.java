@@ -4,14 +4,20 @@ import lombok.Setter;
 import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import pl.training.cloud.commons.FastMoneyMapper;
+import pl.training.cloud.shop.OrdersApi;
+import pl.training.cloud.shop.payments.PaymentStatus;
 import pl.training.cloud.shop.products.ProductsService;
-import pl.training.shop.IdTransferObject;
-import pl.training.shop.OrderTransferObject;
+import pl.training.cloud.shop.IdTransferObject;
+import pl.training.cloud.shop.OrderTransferObject;
 
 import java.util.stream.Collectors;
 
-@Mapper(componentModel = "spring", uses = {FastMoneyMapper.class})
+import static pl.training.cloud.shop.OrdersApi.ORDER_CONFIRMED;
+import static pl.training.cloud.shop.OrdersApi.ORDER_NOT_CONFIRMED;
+
+@Mapper(componentModel = "spring", uses = FastMoneyMapper.class)
 public abstract class OrdersMapper {
+
 
     @Autowired
     @Setter
@@ -23,6 +29,17 @@ public abstract class OrdersMapper {
                 .map(productsService::getById)
                 .collect(Collectors.toList());
         return new Order(orderTransferObject.getClientId(), products);
+    }
+
+    public OrderTransferObject toOrderTransferObject(Order order) {
+        var orderTransferObject = new OrderTransferObject();
+        orderTransferObject.setClientId(order.getClientId());
+        if (order.getPayment().getStatus() == PaymentStatus.CONFIRMED) {
+            orderTransferObject.setStatus(ORDER_CONFIRMED);
+        } else {
+            orderTransferObject.setStatus(ORDER_NOT_CONFIRMED);
+        }
+        return orderTransferObject;
     }
 
 }

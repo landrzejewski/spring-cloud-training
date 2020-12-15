@@ -9,3 +9,6 @@ spring:
           content-type: application/json
           groups: shop
 order-fee: 20
+payments-service:
+  name: payments-service
+  resource: /payments

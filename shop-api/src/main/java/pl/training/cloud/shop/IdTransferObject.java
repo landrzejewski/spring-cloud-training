@@ -1,4 +1,4 @@
-package pl.training.shop;
+package pl.training.cloud.shop;
 
 import lombok.Data;
 

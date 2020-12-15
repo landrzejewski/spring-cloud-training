@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import pl.training.cloud.payments.ExceptionTransferObject;
+import pl.training.cloud.shop.ExceptionTransferObject;
 import pl.training.cloud.shop.orders.OrderNotFoundException;
 import pl.training.cloud.shop.products.ProductNotFoundException;
 

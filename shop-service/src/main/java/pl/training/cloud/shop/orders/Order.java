@@ -3,6 +3,7 @@ package pl.training.cloud.shop.orders;
 import lombok.*;
 import org.javamoney.moneta.FastMoney;
 import pl.training.cloud.commons.LocalMoney;
+import pl.training.cloud.shop.payments.Payment;
 import pl.training.cloud.shop.products.Product;
 
 import javax.persistence.*;
@@ -23,6 +24,8 @@ public class Order {
     @ManyToMany
     @NonNull
     private List<Product> products;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Payment payment;
 
     public FastMoney getTotalValue() {
         return products.stream()

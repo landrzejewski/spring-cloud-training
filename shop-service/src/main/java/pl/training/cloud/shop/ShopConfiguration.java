@@ -7,6 +7,7 @@ import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import pl.training.cloud.commons.LocalMoney;
 import pl.training.cloud.shop.products.Product;
 import pl.training.cloud.shop.products.ProductsRepository;
@@ -43,6 +44,11 @@ public class ShopConfiguration {
     @Bean
     public CacheManager cacheManager() {
         return new ConcurrentMapCacheManager("products");
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 
 }

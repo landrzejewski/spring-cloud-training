@@ -3,8 +3,8 @@ package pl.training.cloud.shop.orders;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
-import pl.training.shop.OrderTransferObject;
-import pl.training.shop.OrdersApi;
+import pl.training.cloud.shop.OrderTransferObject;
+import pl.training.cloud.shop.OrdersApi;
 
 import static pl.training.cloud.commons.UriBuilder.requestUriWithId;
 

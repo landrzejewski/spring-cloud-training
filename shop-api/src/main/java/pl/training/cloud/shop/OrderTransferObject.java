@@ -1,4 +1,4 @@
-package pl.training.shop;
+package pl.training.cloud.shop;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

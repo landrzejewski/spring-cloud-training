@@ -1,19 +1,20 @@
-package pl.training.cloud.payments;
+package pl.training.cloud.shop;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import javax.validation.constraints.NotEmpty;
+import java.time.LocalDateTime;
 
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class PaymentRequestTransferObject {
+public class ExceptionTransferObject {
 
-    @NotEmpty
     @NonNull
-    private String value;
+    private String description;
+    @NonNull
+    private LocalDateTime timestamp;
 
 }
