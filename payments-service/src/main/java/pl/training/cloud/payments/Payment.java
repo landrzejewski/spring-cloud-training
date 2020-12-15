@@ -2,7 +2,9 @@ package pl.training.cloud.payments;
 
 import lombok.*;
 import org.javamoney.moneta.FastMoney;
+import pl.training.cloud.commons.FastMoneyConverter;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
@@ -21,6 +23,7 @@ public class Payment {
     @Id
     private String id;
     private LocalDateTime timestamp;
+    @Convert(converter = FastMoneyConverter.class)
     private FastMoney value;
     private PaymentStatus status;
 
