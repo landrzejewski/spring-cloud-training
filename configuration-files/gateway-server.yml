@@ -8,9 +8,11 @@ spring:
           uri: lb://PAYMENTS-SERVICE
           filters:
             - RewritePath=/api(?<segment>.*), $\{segment}
+            - RewriteLocationResponseHeader=AS_IN_REQUEST, Location
         - id: shop
           predicates:
             - Path=/api/shop/**
           uri: lb://SHOP-SERVICE
           filters:
             - RewritePath=/api/shop(?<segment>.*), $\{segment}
+            - RewriteLocationResponseHeader=AS_IN_REQUEST, Location
