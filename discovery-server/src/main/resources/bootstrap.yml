@@ -1,5 +1,8 @@
 spring:
   application:
     name: discovery-server
+  cloud:
+    config:
+      label: day-1
   profiles:
     active: development
