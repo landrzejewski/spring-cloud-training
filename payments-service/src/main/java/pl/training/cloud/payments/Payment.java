@@ -1,6 +1,9 @@
 package pl.training.cloud.payments;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.javamoney.moneta.FastMoney;
 
 import javax.persistence.Entity;
@@ -10,9 +13,7 @@ import java.util.Objects;
 
 // https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier
 @Entity
-@Getter
-@Setter
-@ToString
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
