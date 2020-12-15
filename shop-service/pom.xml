@@ -54,6 +54,11 @@
         </dependency>
         <dependency>
             <groupId>pl.training.cloud</groupId>
+            <artifactId>shop-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>pl.training.cloud</groupId>
             <artifactId>commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
