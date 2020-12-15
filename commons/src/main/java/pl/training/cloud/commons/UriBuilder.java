@@ -1,4 +1,4 @@
-package pl.training.commons;
+package pl.training.cloud.commons;
 
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 

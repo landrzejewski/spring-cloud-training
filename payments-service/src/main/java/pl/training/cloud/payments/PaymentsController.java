@@ -2,10 +2,9 @@ package pl.training.cloud.payments;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
-import static pl.training.commons.UriBuilder.requestUriWithId;
+import static pl.training.cloud.commons.UriBuilder.requestUriWithId;
 
 
 @RestController
