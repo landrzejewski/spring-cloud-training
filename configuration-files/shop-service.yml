@@ -1,9 +1,11 @@
 server:
-  port: 8000
+  port: 8001
 spring:
   cloud:
     stream:
       bindings:
-        output:
+        input:
           destination: payments-topic
           content-type: application/json
+          groups: shop
+order-fee: 20
