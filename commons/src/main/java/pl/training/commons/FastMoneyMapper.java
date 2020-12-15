@@ -1,4 +1,4 @@
-package pl.training.cloud.payments;
+package pl.training.commons;
 
 import org.javamoney.moneta.FastMoney;
 import org.mapstruct.Mapper;

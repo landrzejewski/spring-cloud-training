@@ -12,11 +12,11 @@
     </parent>
 
     <groupId>pl.training.cloud</groupId>
-    <artifactId>payments-service</artifactId>
+    <artifactId>shop-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>payments</name>
-    <description>payments</description>
+    <name>shop</name>
+    <description>shop</description>
 
     <properties>
         <java.version>11</java.version>

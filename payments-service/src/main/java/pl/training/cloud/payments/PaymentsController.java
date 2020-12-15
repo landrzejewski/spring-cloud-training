@@ -5,7 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
-import static pl.training.cloud.payments.UriBuilder.requestUriWithId;
+import static pl.training.commons.UriBuilder.requestUriWithId;
+
 
 @RestController
 @RequiredArgsConstructor

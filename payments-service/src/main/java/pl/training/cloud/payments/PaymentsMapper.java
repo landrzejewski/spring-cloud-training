@@ -2,6 +2,7 @@ package pl.training.cloud.payments;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.ValueMapping;
+import pl.training.commons.FastMoneyMapper;
 
 @Mapper(componentModel = "spring", uses = FastMoneyMapper.class)
 public interface PaymentsMapper {
