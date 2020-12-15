@@ -1,5 +1,8 @@
 spring:
   application:
     name: gateway-server
+  cloud:
+    config:
+      label: day-2
   profiles:
     active: development

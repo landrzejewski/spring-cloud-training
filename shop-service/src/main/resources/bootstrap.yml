@@ -1,5 +1,8 @@
 spring:
   application:
     name: shop-service
+  cloud:
+    config:
+      label: day-2
   profiles:
     active: development
