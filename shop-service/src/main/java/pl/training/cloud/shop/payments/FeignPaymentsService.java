@@ -43,4 +43,11 @@ public class FeignPaymentsService implements PaymentsService {
         paymentsRepository.saveAndFlush(payment);
     }
 
+    @StreamListener(Sink.INPUT)
+    public void updatePaymentStatus(PaymentTransferObject paymentTransferObject) {
+        log.info("Payment status update: " + paymentTransferObject);
+        var payment = paymentsMapper.toPayment(paymentTransferObject);
+        paymentsRepository.saveAndFlush(payment);
+    }
+
 }

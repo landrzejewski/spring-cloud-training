@@ -16,3 +16,10 @@ spring:
           filters:
             - RewritePath=/api/shop(?<segment>.*), $\{segment}
             - RewriteLocationResponseHeader=AS_IN_REQUEST, Location
+        - id: warehouse
+            predicates:
+              - Path=/api/warehouse/**
+            uri: lb://SHOP-SERVICE
+            filters:
+              - RewritePath=/api/warehouse(?<segment>.*), $\{segment}
+              - RewriteLocationResponseHeader=AS_IN_REQUEST, Location
