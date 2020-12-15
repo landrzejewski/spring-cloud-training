@@ -48,3 +48,10 @@ Content-Type: application/json
 GET http://localhost:8080/api/shop/orders/3
 Accept: application/json
 Content-Type: application/json
+
+###
+
+POST http://localhost:8888/monitor
+Content-Type: application/x-www-form-urlencoded
+
+path=shop-service
