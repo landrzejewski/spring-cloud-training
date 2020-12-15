@@ -1,2 +1,5 @@
 server:
   port: 9001
+spring:
+  datasource:
+    url: jdbc:h2:file:~/shop
