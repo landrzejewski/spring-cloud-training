@@ -8,7 +8,7 @@ spring:
           destination: payments-topic
           content-type: application/json
           groups: shop
-order-fee: 20
+order-fee: 30
 payments-service:
   name: payments-service
   resource: /payments
