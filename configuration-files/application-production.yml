@@ -17,5 +17,5 @@ spring:
 opentracing:
   jaeger:
     udp-sender:
-      host: jaeger
+      host: jaeger-server
       port: 6831

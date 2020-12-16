@@ -85,6 +85,8 @@ services:
       - kafka-server
       - discovery-server
       - configuration-server
+    ports:
+      - 9999:8000
     environment:
       - ACTIVE_PROFILE=production
       - CONFIGURATION_SERVER_URI=http://configuration-server:8888
@@ -99,3 +101,16 @@ services:
     environment:
       - ACTIVE_PROFILE=production
       - CONFIGURATION_SERVER_URI=http://configuration-server:8888
+  portainer:
+    image: portainer/portainer-ce
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/portainer:/data
+  jaeger-server:
+    image: jaegertracing/all-in-one
+    ports:
+      - 16686:16686
+
