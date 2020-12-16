@@ -19,7 +19,7 @@ spring:
         - id: warehouse
           predicates:
             - Path=/api/warehouse/**
-          uri: lb://SHOP-SERVICE
+          uri: lb://WAREHOUSE-SERVICE
           filters:
             - RewritePath=/api/warehouse(?<segment>.*), $\{segment}
             - RewriteLocationResponseHeader=AS_IN_REQUEST, Location
