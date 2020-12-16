@@ -55,3 +55,7 @@ POST http://localhost:8888/monitor
 Content-Type: application/x-www-form-urlencoded
 
 path=shop-service
+
+###
+
+rate(http_server_requests_seconds_count[5m])
