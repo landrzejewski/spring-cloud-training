@@ -1,3 +1,17 @@
 spring:
   jackson:
     default-property-inclusion: non_null
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    baseUrl: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8090
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' ## only for training purposes
