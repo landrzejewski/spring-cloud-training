@@ -49,4 +49,53 @@ services:
     environment:
       - ACTIVE_PROFILE=production
       - CONFIGURATION_SERVER_URI=http://configuration-server:8888
-
+  gateway-server:
+    image: training/gateway-server
+    restart: always
+    depends_on:
+      - configuration-server
+    ports:
+      - 8080:8080
+    environment:
+      - ACTIVE_PROFILE=production
+      - CONFIGURATION_SERVER_URI=http://configuration-server:8888
+  payments-database:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_DB=payments
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - PGDATA=/data
+    volumes:
+      - ./data/payments:/data
+  shop-database:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_DB=shop
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - PGDATA=/data
+    volumes:
+      - ./data/shop:/data
+  payments-service:
+    image: training/payments-service
+    restart: always
+    depends_on:
+      - payments-database
+      - kafka-server
+      - discovery-server
+      - configuration-server
+    environment:
+      - ACTIVE_PROFILE=production
+      - CONFIGURATION_SERVER_URI=http://configuration-server:8888
+  shop-service:
+    image: training/shop-service
+    restart: always
+    depends_on:
+      - shop-database
+      - kafka-server
+      - discovery-server
+      - configuration-server
+    environment:
+      - ACTIVE_PROFILE=production
+      - CONFIGURATION_SERVER_URI=http://configuration-server:8888

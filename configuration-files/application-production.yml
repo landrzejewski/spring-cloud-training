@@ -3,6 +3,8 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery-server:8089/eureka/
 spring:
+  zipkin:
+    baseUrl: http://zipkin-server:9411
   cloud:
     stream:
       kafka:
