@@ -13,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import pl.training.cloud.commons.LocalMoney;
+import pl.training.cloud.shop.payments.PaymentsSink;
 import pl.training.cloud.shop.products.Product;
 import pl.training.cloud.shop.products.ProductsRepository;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -24,7 +25,7 @@ import javax.annotation.PostConstruct;
 
 @ComponentScan("pl.training.cloud.commons")
 @EnableFeignClients("pl.training.cloud.payments")
-@EnableBinding(Sink.class)
+@EnableBinding({Sink.class, PaymentsSink.class})
 @EnableSwagger2
 @EnableCaching
 @Configuration

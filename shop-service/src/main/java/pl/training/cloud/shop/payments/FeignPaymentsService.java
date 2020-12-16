@@ -36,7 +36,7 @@ public class FeignPaymentsService implements PaymentsService {
         return Optional.empty();
     }
 
-    @StreamListener(Sink.INPUT)
+    @StreamListener(PaymentsSink.INPUT)
     public void updatePaymentStatus(PaymentTransferObject paymentTransferObject) {
         log.info("Payment status update: " + paymentTransferObject);
         var payment = paymentsMapper.toPayment(paymentTransferObject);
