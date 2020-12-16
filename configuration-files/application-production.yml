@@ -5,6 +5,10 @@ eureka:
 spring:
   zipkin:
     baseUrl: http://zipkin-server:9411
+  boot:
+    admin:
+      client:
+        url: http://admin-server:8090
   cloud:
     stream:
       kafka:
