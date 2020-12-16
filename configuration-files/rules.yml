@@ -1,0 +1,10 @@
+groups:
+  - name: default
+    rules:
+      - alert: RequestRate
+        expr: rate(http_server_requests_seconds_count{uri="/payments"}[5m]) > 5
+        for: 1m
+        labels:
+          severity: high
+        annotations:
+          summary: Application receiving too many requests

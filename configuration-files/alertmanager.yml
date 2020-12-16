@@ -1,0 +1,11 @@
+route:
+  receiver: emailer
+receivers:
+  - name: emailer
+    email_config:
+      - to: admin@gmail.com
+        form: training@gmail.com
+        smarthost: smtp.gmail.com:587
+        auth_user: training@gmail.com
+        auth_identity: training@gmail.com
+        auth_passwrd: password

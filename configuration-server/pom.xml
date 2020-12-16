@@ -24,6 +24,7 @@
     </properties>
 
     <build>
+        <finalName>configuration-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

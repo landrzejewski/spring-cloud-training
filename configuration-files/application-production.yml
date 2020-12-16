@@ -1,0 +1,15 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8089/eureka/
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafka-server
+opentracing:
+  jaeger:
+    udp-sender:
+      host: jaeger
+      port: 6831

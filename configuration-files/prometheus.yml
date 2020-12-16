@@ -1,0 +1,12 @@
+scrape_configs:
+  - job_name: 'payments'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: [ 'payments-service:8000' ]
+rule_files:
+  - 'rules.yml'
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093

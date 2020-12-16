@@ -27,3 +27,26 @@ services:
       - PORT=8090
     ports:
       - 8090:8090
+  configuration-server:
+    image: training/configuration-server
+    restart: always
+    depends_on:
+      - kafka-server
+    ports:
+      - 8888:8888
+    environment:
+      - ACTIVE_PROFILE=production
+      - GIT_CONFIG_URI=https://github.com/landrzejewski/spring-cloud-training
+      - KAFKA_SERVER=kafka-server
+  discovery-server:
+    image: training/discovery-server
+    restart: always
+    depends_on:
+      - kafka-server
+      - configuration-server
+    ports:
+      - 8089:8089
+    environment:
+      - ACTIVE_PROFILE=production
+      - CONFIGURATION_SERVER_URI=http://configuration-server:8888
+
