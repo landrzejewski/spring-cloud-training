@@ -17,6 +17,7 @@
     </properties>
 
     <modules>
+        <module>admin-server</module>
         <module>configuration-server</module>
         <module>discovery-server</module>
         <module>gateway-server</module>

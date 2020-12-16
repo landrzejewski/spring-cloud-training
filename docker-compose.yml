@@ -13,3 +13,13 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     #volumes:
     #  - /var/run/docker.sock:/var/run/docker.sock
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+  zipkin-ui:
+    image: openzipkin/zipkin-ui
+    environment:
+      - ZIPKIN_BASE_URI=http://zipkin:9411
+    ports:
+      - 8081:80
