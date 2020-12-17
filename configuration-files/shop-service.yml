@@ -12,7 +12,7 @@ spring:
           destination: payments-topic
           content-type: application/json
           groups: shop
-order-fee: 30
+order-fee: "{cipher}cfce2b03cffc2f90948bff2c83ac4872d08d0c8830dc65150570c2e827aa527a"
 payments-service:
   name: payments-service
   resource: /payments

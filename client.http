@@ -58,5 +58,19 @@ path=shop-service
 
 ###
 
+POST http://localhost:8888/encrypt
+Content-Type: text/html
+
+20
+
+###
+
+POST http://localhost:8888/decrypt
+Content-Type: text/html
+
+cfce2b03cffc2f90948bff2c83ac4872d08d0c8830dc65150570c2e827aa527a
+
+###
+
 # rate(http_server_requests_seconds_count{uri="/payments"}[5m])
 # Spring Boot Grafana dashboard id 4701
