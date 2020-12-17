@@ -1,2 +1,8 @@
-encrypt:
-  key: SYMMETRICKEY
+#encrypt:
+#  key: SYMMETRICKEY
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
