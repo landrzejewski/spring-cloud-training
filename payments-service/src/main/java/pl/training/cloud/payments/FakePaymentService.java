@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 
 @Transactional
 @Service
-@Log
 @RequiredArgsConstructor
 public class FakePaymentService implements PaymentsService {
 
@@ -30,7 +29,6 @@ public class FakePaymentService implements PaymentsService {
                 .timestamp(LocalDateTime.now())
                 .build();
         processPayment(payment);
-        log.info("New payment: " + payment);
         return paymentsRepository.saveAndFlush(payment);
     }
 
