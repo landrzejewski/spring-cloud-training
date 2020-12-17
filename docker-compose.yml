@@ -13,7 +13,8 @@ services:
     ports:
       - 9092:9092
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: kafka-server
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      #KAFKA_ADVERTISED_HOST_NAME: kafka-server
       KAFKA_ZOOKEEPER_CONNECT: zookeeper-server:2181
   zipkin-server:
     image: openzipkin/zipkin
