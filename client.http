@@ -58,4 +58,5 @@ path=shop-service
 
 ###
 
-rate(http_server_requests_seconds_count[5m])
+# rate(http_server_requests_seconds_count{uri="/payments"}[5m])
+# Spring Boot Grafana dashboard id 4701

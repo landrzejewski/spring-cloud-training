@@ -118,6 +118,15 @@ services:
       - 9093:9093
     volumes:
       - ./configuration-files/alertmanager.yml:/etc/prometheus/alertmanager.yml
+  grafana-server:
+    image: grafana/grafana
+    restart: always
+    depends_on:
+      - prometheus-server
+    ports:
+      - 3000:3000
+    volumes:
+      - ./configuration-files/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml:r
   portainer:
     image: portainer/portainer-ce
     restart: always
