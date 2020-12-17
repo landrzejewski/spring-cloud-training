@@ -7,6 +7,7 @@ import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pl.training.cloud.commons.LogExecutionTime;
 
 import java.time.LocalDateTime;
 
@@ -20,6 +21,7 @@ public class FakePaymentService implements PaymentsService {
     private final PaymentsMapper paymentsMapper;
     private final Source source;
 
+    @LogExecutionTime
     @Override
     public Payment process(PaymentRequest paymentRequest) {
         var payment = Payment.builder()

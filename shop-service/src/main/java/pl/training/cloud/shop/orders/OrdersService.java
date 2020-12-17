@@ -3,6 +3,7 @@ package pl.training.cloud.shop.orders;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pl.training.cloud.commons.Retry;
 import pl.training.cloud.shop.payments.PaymentsService;
 
 @Transactional
@@ -14,6 +15,7 @@ public class OrdersService {
     private final PaymentsService paymentsService;
     private final OrderFee orderFee;
 
+    @Retry(attempts = 4)
     public void placeOrder(Order order) {
         var paymentValue = order.getTotalValue().add(orderFee.getValue());
         var payment = paymentsService.pay(paymentValue)
